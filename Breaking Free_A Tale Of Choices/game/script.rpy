@@ -5,7 +5,7 @@ label start:
     scene bg room
 
     show player happy
-    
-    p ""
-    
+
+    p "Yo wassup"
+
     return
