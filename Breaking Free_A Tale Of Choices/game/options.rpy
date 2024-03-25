@@ -143,7 +143,11 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
+<<<<<<< HEAD
+define config.save_directory = "BreakingFree_ATaleOfChoices-1711244100"
+=======
 define config.save_directory = "BreakingFree_ATaleOfChoices-1711242660"
+>>>>>>> 24ce62e42e2256cf03e3bc591f43d5e17b6efe6a
 
 
 ## Icon ########################################################################
