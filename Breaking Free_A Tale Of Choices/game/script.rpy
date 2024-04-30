@@ -62,7 +62,7 @@ label start:
         label choice_1a:
             $ menu_flag=True
             scene Active 
-            e"Participate actively in discussions."
+            e"Participate aaaactively in discussions."
             jump choice_1_done
         label choice_2a:
             $ menu_flag=False
@@ -70,6 +70,7 @@ label start:
             e"Stay quiet and listen to the lecture."
             jump choice_1_done
         label choice_1_done:
+            
 
         
 
