@@ -4,7 +4,10 @@ define t = Character("Text Message")
 
 label start:
 
-    $ intelligence = 0, health = 0, socialSkills = 0, pornAddiction = 0
+    $ intelligence = 0
+    $ health = 0
+    $ socialSkills = 0
+    $ pornAddiction = 0
 
     $ player_name = renpy.input("What is your name ? (default: Anandu)")
 
@@ -13,8 +16,16 @@ label start:
     if player_name == "":
         $ player_name = "Anandu"
 
-    # day starts
+    $ day = 1
+    centered "{size=*3} Day [day] {/size}"
+    
+    # day 1 dialogues
+
+    # day 2- starts
+    $ day += 1
+    
     label day:
+        centered "{size=*3} Day [day] {/size}"
         # wake up
         menu:
             "Go to Gym ?"
@@ -43,5 +54,6 @@ label start:
                 # spends time with family
                 $ socialSkills += 1
         # sleep
+        $ day += 1
         jump day
                         

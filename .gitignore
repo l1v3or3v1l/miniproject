@@ -132,10 +132,7 @@ CubismSdkForNative-4-*.zip
 /*-dists
 /c
 /cg
-<<<<<<< HEAD
 /.vscode/launch.json
 
 /.vscode
-=======
-/.vscode/launch.json
->>>>>>> 24ce62e42e2256cf03e3bc591f43d5e17b6efe6a
+/renpy/
