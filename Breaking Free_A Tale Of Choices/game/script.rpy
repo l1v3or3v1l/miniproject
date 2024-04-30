@@ -1,6 +1,11 @@
-define p = Character("[player_name]")
-define u = Character("Uncle")
-define t = Character("Text Message")
+define e = Character("[player_name]")
+define m = Character("Mother")
+image Ready=im.Scale("ready.png",1920,1080)
+image Sleep=im.Scale("sleep.png",1920,1080)
+image Readyhurry=im.Scale("readyhurry.png",1920,1080)
+image Reached=im.Scale("reached.png",1920,1080)
+image Silent=im.Scale("silent.png",1920,1080)
+image Active=im.Scale("active.png",1920,1080)
 
 label start:
 
@@ -14,17 +19,55 @@ label start:
     $ player_name = player_name.strip()
 
     if player_name == "":
-        $ player_name = "Anandu"
+        $ player_name = "Anandu" 
+
+    e "click to continue"
+    $ renpy.movie_cutscene("./images/NEW.webm")
 
     $ day = 1
+    scene black
     centered "{size=*3} Day [day] {/size}"
-    
-    # day 1 dialogues
+
+    scene alarm 
+    play music "ring.mp3"
+    menu:
+        "Turn off the Alarm and wakeup":
+            $ menu_flag=True
+            stop music 
+            scene Ready
+            e "getting ready"
+
+        "snooze the Alarm and sleep for some more time":
+            $ menu_flag=False
+            stop music 
+            scene Sleep
+            show mother 
+            play sound "snore.mp3" 
+            m" wake up [e]!"
+            show mother at left
+            play sound "ring.mp3"
+            m"get ready son ! you are already late"
+            stop sound
+            scene Readyhurry
+            e"getting ready"
+
+    scene Reached
+    e"finally reached college"
+    menu:
+        " Participate actively in discussions.":
+            $ menu_flag=True
+            scene Active
+            e ""
+        "Stay quiet and listen to the lecture.":
+            $ menu_flag=False
+            scene Silent
+            e ""
 
     # day 2- starts
     $ day += 1
-    
+
     label day:
+        scene black
         centered "{size=*3} Day [day] {/size}"
         # wake up
         menu:
