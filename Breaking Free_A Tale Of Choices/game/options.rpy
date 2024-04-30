@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Breaking Free_A Tale Of Choices")
+define config.name = _("BREAKING FREE A TALE OF CHOICES")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "BreakingFree_ATaleOfChoices"
+define build.name = "BREAKINGFREEATALEOFCHOICES"
 
 
 ## Sounds and music ############################################################
@@ -143,11 +143,7 @@ default preferences.afm_time = 15
 ## This generally should not be changed, and if it is, should always be a
 ## literal string, not an expression.
 
-<<<<<<< HEAD
-define config.save_directory = "BreakingFree_ATaleOfChoices-1711244100"
-=======
-define config.save_directory = "BreakingFree_ATaleOfChoices-1711242660"
->>>>>>> 24ce62e42e2256cf03e3bc591f43d5e17b6efe6a
+define config.save_directory = "BREAKINGFREEATALEOFCHOICES-1714397034"
 
 
 ## Icon ########################################################################
