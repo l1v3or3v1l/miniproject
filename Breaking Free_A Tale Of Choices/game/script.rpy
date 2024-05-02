@@ -9,6 +9,9 @@ image Readyhurry=im.Scale("readyhurry.png",1920,1080)
 image Reached=im.Scale("reached.png",1920,1080)
 image Silent=im.Scale("silent.png",1920,1080)
 image Active=im.Scale("active.png",1920,1080)
+image Return=im.Scale("return.png",1920,1080)
+image Tv=im.Scale("tv.png",1920,1080)
+image Gym=im.Scale("gym.png",1920,1080)
 
 
 
@@ -70,7 +73,22 @@ label start:
             e"Stay quiet and listen to the lecture."
             jump choice_1_done
         label choice_1_done:
-            
+            play sound"ring.mp3"
+            "bell rings"
+            scene Return
+            e"returning to home"
+            menu:
+                "spend time at home":
+                    scene Tv 
+                    "watching Tv"
+                "go to gym":
+                    scene Gym 
+                    "lifting weights"
+
+
+
+             
+
 
         
 
