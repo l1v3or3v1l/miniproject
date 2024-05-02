@@ -12,6 +12,10 @@ image Active=im.Scale("active.png",1920,1080)
 image Return=im.Scale("return.png",1920,1080)
 image Tv=im.Scale("tv.png",1920,1080)
 image Gym=im.Scale("gym.png",1920,1080)
+image Sleep1=im.Scale("sleep1.png",1920,1080)
+image Study=im.Scale("study.png",1920,1080)
+image Street=im.Scale("street.png",1920,1080)
+image Club=im.Scale("club.png",1920,1080)
 
 
 
@@ -76,6 +80,7 @@ label start:
             play sound"ring.mp3"
             "bell rings"
             scene Return
+            stop sound
             e"returning to home"
             menu:
                 "spend time at home":
@@ -84,6 +89,16 @@ label start:
                 "go to gym":
                     scene Gym 
                     "lifting weights"
+                    scene Street
+                    "returning to home"
+                    scene black
+                    e"finally reached home"
+        menu:
+            "Concentrate on your textbooks and notes.":
+                scene Study
+            "go to club and enjoy with friends":
+                scene Club
+        scene Sleep1
 
 
 
