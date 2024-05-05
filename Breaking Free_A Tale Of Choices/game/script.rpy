@@ -1,5 +1,10 @@
 define e = Character("[player_name]")
 define m = Character("Mother")
+define d = Character("Dad")
+define f = Character("Friend")
+define t = Character("Trainer")
+define u = Character("Uncle")
+define fa = Character("Family")
 image Ready=im.Scale("ready.png",1920,1080)
 image Sleep=im.Scale("sleep.png",1920,1080)
 image Readyhurry=im.Scale("readyhurry.png",1920,1080)
@@ -38,108 +43,113 @@ label start:
 
     scene alarm 
     play music "ring.mp3"
-    menu:
-        "Turn off the Alarm and wakeup":
-            $ menu_flag=True
-            stop music 
-            scene Ready
-            e "getting ready"
 
-        "snooze the Alarm and sleep for some more time":
-            $ menu_flag=False
-            stop music 
-            scene Sleep
-            show mother 
-            play sound "snore.mp3" 
-            m" wake up [e]!"
-            show mother at left
-            play sound "ring.mp3"
-            m"get ready son ! you are already late"
-            stop sound
-            scene Readyhurry
-            e"getting ready"
+
+    e "Another day, another early start."
+    stop music
+    show mother:
+        xpos 0.1
+        ypos 0.28
+    m "Good morning, Ethan. Breakfast is ready."
+    hide mother
+    e "Thanks, Mom. I'll be down in a minute."
+    show father:
+        xpos 0.7
+        ypos 0.28
+    d "Don't forget to grab your lunch before you go."
+    hide father
 
     scene Reached
-    e"finally reached college"
-    menu:
-        " Participate actively in discussions.":
-            $ menu_flag=True
-            scene Active
-            $ socialSkills += 1
-            $ intelligence += 1
-            pause
-        "Stay quiet and listen to the lecture.":
-            $ menu_flag=False
-            scene Silent
-            $ intelligence += 1
-            pause
-    play sound"ring.mp3"
-    "bell rings"
-    scene Return
-    stop sound
-    e"returning to home"
-    menu:
-        "spend time at home":
-            scene Tv
-            "watching Tv"
-            $ health -= 1
-        "go to gym":
-            scene Gym 
-            "lifting weights"
-            $ intelligence += 1
-            $ health += 1
-            scene Street
-            "returning to home"
-            scene black
-            e"finally reached home"
-    menu:
-        "Concentrate on your textbooks and notes.":
-            scene Study
-            pause
-            $ intelligence += 1
-        "go to club and enjoy with friends":
-            scene Club
-            pause
-            $ socialSkills += 1
-            $ health -= 1
-    scene Sleep1
+    f "Hey, Ethan! Ready for another day of classes?"
+    e "Ready as I'll ever be. How about you?"
+    f  "Same here. Let's try to make the most of it."
+
+    scene Gym
+
+    t "Looking good, Ethan! Keep up the great work."
+    e "Thanks, Coach. I'm trying to stay on track."
+    t "You're doing great. Just keep pushing yourself."
 
 
+    scene black
 
-    # # day 2- starts
-    # $ day += 1
+    u "Happy birthday, Ethan! I hope you like your gift."
+    e "Wow, a laptop! Thank you so much, Uncle."
+    fa "Happy birthday, Ethan!"
 
-    # label day:
-    #     scene black
-    #     centered "{size=*3} Day [day] {/size}"
-    #     # wake up
-    #     menu:
-    #         "Go to Gym ?"
-    #         "Yes":
-    #             $ health += 1
-    #         "No":
-    #             $ health -= 1
-    #             $ intelligence -= 1
-    #     # goes to college
-    #     menu:
-    #         "Socialise ?"
-    #         "Yes":
-    #             $ socialSkills += 1
-    #             $ intelligence += 1
-    #         "No":
-    #             $ socialSkills -= 1
-    #     # return home and starts studying, encounters an explicit ad pop up
-    #     menu:
-    #         "Continue ?"
-    #         "Yes":
-    #             $ pornAddiction += 1
-    #             $ health -= 1
-    #             $ intelligence -= 1
-    #         "No":
-    #             $ pornAddiction -= 1
-    #             # spends time with family
-    #             $ socialSkills += 1
-    #     # sleep
-    #     $ day += 1
-    #     jump day
-                        
+
+    scene Study
+
+    e "Alright, time to hit the books."
+
+    # day 2- starts
+
+    # scene alarm 
+    # play music "ring.mp3"
+
+    # menu:
+    #     "Turn off the Alarm and wakeup":
+    #         $ menu_flag=True
+    #         stop music 
+    #         scene Ready
+    #         e "getting ready"
+
+    #     "snooze the Alarm and sleep for some more time":
+    #         $ menu_flag=False
+    #         stop music 
+    #         scene Sleep
+    #         show mother 
+    #         play sound "snore.mp3" 
+    #         m" wake up [e]!"
+    #         show mother at left
+    #         play sound "ring.mp3"
+    #         m"get ready son ! you are already late"
+    #         stop sound
+    #         scene Readyhurry
+    #         e"getting ready"
+
+    # scene Reached
+    # e"finally reached college"
+    # menu:
+    #     " Participate actively in discussions.":
+    #         $ menu_flag=True
+    #         scene Active
+    #         $ socialSkills += 1
+    #         $ intelligence += 1
+    #         pause
+    #     "Stay quiet and listen to the lecture.":
+    #         $ menu_flag=False
+    #         scene Silent
+    #         $ intelligence += 1
+    #         pause
+    # play sound"ring.mp3"
+    # "bell rings"
+    # scene Return
+    # stop sound
+    # e"returning to home"
+    # menu:
+    #     "spend time at home":
+    #         scene Tv
+    #         "watching Tv"
+    #         $ health -= 1
+    #     "go to gym":
+    #         scene Gym 
+    #         "lifting weights"
+    #         $ intelligence += 1
+    #         $ health += 1
+    #         scene Street
+    #         "returning to home"
+    #         scene black
+    #         e"finally reached home"
+    # menu:
+    #     "Concentrate on your textbooks and notes.":
+    #         scene Study
+    #         pause
+    #         $ intelligence += 1
+    #     "go to club and enjoy with friends":
+    #         scene Club
+    #         pause
+    #         $ socialSkills += 1
+    #         $ health -= 1
+    # scene Sleep1
+    # pause
