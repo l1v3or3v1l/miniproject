@@ -175,14 +175,15 @@ style say_dialogue:
 screen input(prompt):
     style_prefix "input"
 
-    window:
+    frame:
+        background Frame("gui/input_frame_bg.png", Borders(25,25,25,25))
+        xalign 0.5
+        yalign 0.5
+        xpadding 30
+        ypadding 30
 
         vbox:
-            xanchor gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
-            xsize gui.dialogue_width
-            ypos gui.dialogue_ypos
-
+            spacing 10
             text prompt style "input_prompt"
             input id "input"
 
@@ -191,10 +192,12 @@ style input_prompt is default
 style input_prompt:
     xalign gui.dialogue_text_xalign
     properties gui.text_properties("input_prompt")
+    color"#fff"
 
 style input:
     xalign gui.dialogue_text_xalign
     xmaximum gui.dialogue_width
+    color"#ff0000"
 
 
 ## Choice screen ###############################################################
@@ -385,7 +388,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0

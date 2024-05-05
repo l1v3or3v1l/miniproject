@@ -22,19 +22,26 @@ image Club=im.Scale("club.png",1920,1080)
 # The game starts here.
 
 label start:
-    python:
-        name=renpy.input("whats your name??")
-        name=name.strip() or "Revi"
+    scene yagami
+    play music"death_note.mp3"
+    $ name=renpy.input("whats your name??")
+    $ name=name.strip() or "Revi"
     define e=Character("[name]")
+    $ boy1.name = name
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
     e"click to continue"
+    stop music
     $ renpy.movie_cutscene("./images/NEW.webm")
+    show screen gameUI
     scene alarm 
     play music "ring.mp3"
     menu:
         "Turn of the Alarm and wakeup":
+            $ boy1.Intelligence+=5
+            $ boy1.Socialskill+=2
+            $ boy1.Health+=6
             jump choice_1
         "snooze the Alarm and sleep for some more time":
             jump choice_2
@@ -96,8 +103,10 @@ label start:
         menu:
             "Concentrate on your textbooks and notes.":
                 scene Study
+                "studying"
             "go to club and enjoy with friends":
-                scene Club
+                scene Club 
+                "chilling"
         scene Sleep1
 
 
