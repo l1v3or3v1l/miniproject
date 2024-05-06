@@ -18,6 +18,7 @@ image Sleep1=im.Scale("sleep1.png",1920,1080)
 image Study=im.Scale("study.png",1920,1080)
 image Street=im.Scale("street.png",1920,1080)
 image Club=im.Scale("club.png",1920,1080)
+image College=im.Scale("college.png",1920,1080)
 
 
 label start:
@@ -71,7 +72,7 @@ label start:
         ypos 0.29
     e "Got it, Dad. Thanks."
 
-    scene Reached
+    scene College
     show friend:
         xpos 0.7
         ypos 0.29
