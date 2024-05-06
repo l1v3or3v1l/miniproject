@@ -44,32 +44,66 @@ label start:
     scene alarm 
     play music "ring.mp3"
 
-
+    show char in:
+        xpos 0.7
+        ypos 0.29
+    # Yawns
     e "Another day, another early start."
+    hide char in
     stop music
     show mother:
         xpos 0.1
-        ypos 0.28
+        ypos 0.21
     m "Good morning, Ethan. Breakfast is ready."
     hide mother
+    show char in:
+        xpos 0.7
+        ypos 0.29
     e "Thanks, Mom. I'll be down in a minute."
+    hide char in
     show father:
         xpos 0.7
-        ypos 0.28
+        ypos 0.22
     d "Don't forget to grab your lunch before you go."
     hide father
+    show char in:
+        xpos 0.7
+        ypos 0.29
+    e "Got it, Dad. Thanks."
 
     scene Reached
+    show friend:
+        xpos 0.7
+        ypos 0.29
     f "Hey, Ethan! Ready for another day of classes?"
+    hide friend
+    show char college:
+        xpos 0.7
+        ypos 0.29
     e "Ready as I'll ever be. How about you?"
+    hide char college
+    show friend:
+        xpos 0.7
+        ypos 0.29
     f  "Same here. Let's try to make the most of it."
+    hide friend
 
     scene Gym
-
+    show trainer:
+        xpos 0.1
+        ypos 0.3
     t "Looking good, Ethan! Keep up the great work."
+    hide trainer
+    show char out:
+        xpos 0.7
+        ypos 0.29
     e "Thanks, Coach. I'm trying to stay on track."
+    hide char out
+    show trainer:
+        xpos 0.1
+        ypos 0.3
     t "You're doing great. Just keep pushing yourself."
-
+    hide trainer
 
     scene black
 
